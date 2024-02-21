@@ -1,18 +1,21 @@
 import { Flex } from "@chakra-ui/react";
 import { Navbar } from "../components/Navbar";
-import { CenterComponent } from "../components/CenterComponent";
+import { RaffleSingleComponent } from "../components/RaffleSingleComponent";
 
-export default function Home() {
+const RaffleSingle = () => {
   return (
     <Flex
       w="100%"
-      h="100vh"
       flexDir="column"
       bgColor={"#000"}
       alignItems="center"
+      pb={50}
     >
       <Navbar />
-      <CenterComponent />
+
+      <RaffleSingleComponent />
     </Flex>
   );
-}
+};
+
+export default RaffleSingle;
