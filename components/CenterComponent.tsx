@@ -42,7 +42,7 @@ export const CenterComponent = () => {
           color="white"
           fontSize={25}
           onClick={() => {
-            push("/raffles");
+            alert("Available soon");
           }}
         >
           Host a raffle for FREE
