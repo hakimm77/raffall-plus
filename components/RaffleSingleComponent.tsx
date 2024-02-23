@@ -1,7 +1,10 @@
-import { Button, Flex, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Button, Flex, Image, Text } from "@chakra-ui/react";
 
-export const RaffleSingleComponent = () => {
+export const RaffleSingleComponent = ({
+  raffleObject,
+}: {
+  raffleObject: any;
+}) => {
   return (
     <Flex
       w="80%"
@@ -16,12 +19,12 @@ export const RaffleSingleComponent = () => {
       <Flex flexDir="row" w="100%" justifyContent="space-between" mb={10}>
         <Flex flexDir="column">
           <Text fontSize={30} fontWeight="bold" color="#000" mb={5}>
-            Enter Raffle to Win Oak Scotland map clock
+            Enter Raffle to Win {raffleObject.title}
           </Text>
 
           <Image
             alt="image-raffle"
-            src={require("../assets/raffle-image.png")}
+            src={raffleObject.picture}
             style={{ width: 600 }}
           />
         </Flex>
@@ -41,7 +44,7 @@ export const RaffleSingleComponent = () => {
             <span style={{ color: "gray", fontWeight: "bold" }}>
               ticket price
             </span>{" "}
-            $1.99
+            {raffleObject.price}
           </Text>
           <Text color="#000" fontSize={23} mb={5}>
             <span style={{ color: "gray", fontWeight: "bold" }}>

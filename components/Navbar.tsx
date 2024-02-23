@@ -7,6 +7,7 @@ export const Navbar = () => {
 
   return (
     <Flex
+      zIndex={100}
       w="90%"
       flexDir="row"
       alignItems={"center"}

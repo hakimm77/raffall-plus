@@ -1,63 +1,10 @@
-import { Button, Flex, Input, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Button, Flex, Image, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { raffles } from "../utils/raffles";
 
 export const RafflesComponent = () => {
   const { push } = useRouter();
-  const [categories, setCategories] = useState([
-    {
-      name: "Art",
-      raffles: [
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-      ],
-    },
-    {
-      name: "Cash",
-      raffles: [
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-      ],
-    },
-    {
-      name: "Collectables",
-      raffles: [
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-        {
-          title: "Example of a Raffle title",
-          price: "$1.99",
-        },
-      ],
-    },
-  ]);
 
   return (
     <Flex w="90%" mt={100} flexDir="column" alignItems="center" color="#fff">
@@ -83,7 +30,7 @@ export const RafflesComponent = () => {
       </Flex>
 
       <Flex flexDir="column" bgColor="#fff" borderRadius={10} w="90%" p={5}>
-        {categories.map((category, categoryIndex) => (
+        {raffles.map((category, categoryIndex) => (
           <Flex flexDir="column" key={categoryIndex} mb={10}>
             <Text color="#000" fontSize={30} mb={5} fontWeight="bold">
               {category.name}
@@ -91,11 +38,13 @@ export const RafflesComponent = () => {
 
             <Flex
               flexDir="row"
-              alignItems="center"
+              alignItems="flex-start"
               justifyContent="space-around"
             >
               {category.raffles.map((raffle, raffleIndex) => (
                 <Flex
+                  position="relative"
+                  height="450px"
                   cursor="pointer"
                   key={raffleIndex}
                   flexDir="column"
@@ -105,7 +54,7 @@ export const RafflesComponent = () => {
                   borderWidth={2}
                   borderRadius={10}
                   onClick={() => {
-                    push("/raffleSingle");
+                    push(`/raffleSingle/${categoryIndex}-${raffleIndex}`);
                   }}
                 >
                   <Text fontSize={25} color="#000">
@@ -115,23 +64,26 @@ export const RafflesComponent = () => {
                     Anuj.Patel
                   </Text>
 
-                  <Image
-                    alt="image-raffle"
-                    src={require("../assets/raffle-image.png")}
-                    style={{ marginBottom: 10 }}
-                  />
+                  <Flex flexDir="column" bottom={5} p={5} position="absolute">
+                    <Image
+                      alt="image-raffle"
+                      src={raffle.picture}
+                      style={{ marginBottom: 10 }}
+                    />
 
-                  <Flex
-                    flexDir="row"
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Text fontSize={23} color="#000">
-                      Ends in <span style={{ fontWeight: "bold" }}>9 days</span>
-                    </Text>
-                    <Text fontSize={23} color="#3bb82e" fontWeight="bold">
-                      {raffle.price}
-                    </Text>
+                    <Flex
+                      flexDir="row"
+                      alignItems="center"
+                      justifyContent="space-between"
+                    >
+                      <Text fontSize={23} color="#000">
+                        Ends in{" "}
+                        <span style={{ fontWeight: "bold" }}>9 days</span>
+                      </Text>
+                      <Text fontSize={23} color="#3bb82e" fontWeight="bold">
+                        {raffle.price}
+                      </Text>
+                    </Flex>
                   </Flex>
                 </Flex>
               ))}
