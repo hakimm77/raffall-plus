@@ -45,6 +45,7 @@ export const RafflesComponent = () => {
                   key={raffleIndex}
                   flexDir="column"
                   minW={"30%"}
+                  w="30%"
                   p={5}
                   mr={10}
                   mb={5}

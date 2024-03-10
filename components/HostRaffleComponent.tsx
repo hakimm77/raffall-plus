@@ -7,6 +7,10 @@ export const HostRaffleComponent = () => {
   const { push } = useRouter();
   const [categories, setCategories] = useState([
     "Art",
+    "Watch",
+    "Car",
+    "Real Estate",
+    "Travel",
     "Collectables",
     "Experiences",
     "Cash",

@@ -33,7 +33,7 @@ export const CenterComponent = () => {
             push("/raffles");
           }}
         >
-          View Prizes and raffles
+          View Prizes and Raffles
         </Button>
 
         <Button
@@ -45,7 +45,7 @@ export const CenterComponent = () => {
             push("/hostraffle");
           }}
         >
-          Host Prizes and raffles for FREE
+          Host Prizes and Raffles for FREE
         </Button>
       </Flex>
     </Flex>
