@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import { Navbar } from "../components/Navbar";
 import { CenterComponent } from "../components/CenterComponent";
 import Image from "next/image";
-import { VideoComponent } from "../components/VideoComponent";
+import Head from "next/head";
 
 export default function Home() {
   return (
@@ -13,6 +13,9 @@ export default function Home() {
       bgColor={"#000"}
       alignItems="center"
     >
+      <Head>
+        <title>Raffle Ticket</title>
+      </Head>
       <Image
         alt="bg-image"
         src={require("../assets/background-image.png")}

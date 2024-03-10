@@ -17,9 +17,9 @@ export const CenterComponent = () => {
         WE MAKE IT EASY TO HOST RAFFLES ONLINE
       </Text>
       <Text fontSize={23} textAlign="center" mb={10}>
-        Enabling brands, influencers, charities and businesses to run prize
-        competitions and sell tickets to win their products, experiences or
-        personal items as prizes
+        Facilitating brands, influencers and businesses to conduct prize
+        competitions, offering tickets for sale to win their products,
+        experiences, or personal items as rewards
       </Text>
 
       <Flex flexDir="row">
@@ -33,7 +33,7 @@ export const CenterComponent = () => {
             push("/raffles");
           }}
         >
-          Public Raffles+
+          View Prizes and raffles
         </Button>
 
         <Button
@@ -45,7 +45,7 @@ export const CenterComponent = () => {
             push("/hostraffle");
           }}
         >
-          Host a raffle for FREE
+          Host Prizes and raffles for FREE
         </Button>
       </Flex>
     </Flex>

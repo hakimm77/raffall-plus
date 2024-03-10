@@ -12,7 +12,6 @@ export const RaffleSingleComponent = ({
       borderRadius={10}
       mt={100}
       flexDir="column"
-      alignItems="center"
       color="#fff"
       p={5}
     >
@@ -38,7 +37,7 @@ export const RaffleSingleComponent = ({
         >
           <Text color="#000" fontSize={23} mb={3}>
             <span style={{ color: "gray", fontWeight: "bold" }}>owner</span>{" "}
-            Anuj.patel
+            {raffleObject.host}
           </Text>
           <Text color="#000" fontSize={23} mb={3}>
             <span style={{ color: "gray", fontWeight: "bold" }}>
@@ -77,30 +76,9 @@ export const RaffleSingleComponent = ({
           Raffle Summary
         </Text>
         <Text color="#000" fontSize={20}>
-          Scotland Map wall clock. Carved from oak. Hand pained with acrylic
-          paint and finished with a high grade polyurethane varnish with white
-          hour, minute and second hands. Approx 250mm x 250mm x 18-20mm. Rear
-          keyhole for easy hanging.
+          {raffleObject.description}
         </Text>
       </Flex>
-
-      {/*  */}
-
-      {/* <Flex
-        flexDir="column"
-        borderLeftColor={"#3bb82e"}
-        borderLeftWidth={5}
-        p={3}
-        mb={10}
-      >
-        <Text color="#000" fontSize={25} fontWeight="bold" mb={3}>
-          Raffle Ends
-        </Text>
-        <Text color="#000" fontSize={20}>
-          Sunday, 1st September 2024 at 11:14 or when the last ticket is sold
-          (whichever comes sooner)
-        </Text>
-      </Flex> */}
 
       <Flex
         flexDir="column"

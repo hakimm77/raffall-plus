@@ -35,13 +35,13 @@ export const HostRaffleComponent = () => {
     <Flex w="80%" mt={100} flexDir="column" color="#fff">
       <Flex
         flexDir="row"
-        w="60%"
+        w="80%"
         alignItems="center"
         justifyContent="space-between"
         mb={20}
       >
-        <Text color="white" fontSize={35} fontWeight="bold">
-          Enter Raffle to Win
+        <Text color="white" fontSize={30} fontWeight="bold">
+          Enter competition to win
         </Text>
         <Input
           placeholder="Example, Gaming Gagdets..."

@@ -36,11 +36,7 @@ export const RafflesComponent = () => {
               {category.name}
             </Text>
 
-            <Flex
-              flexDir="row"
-              alignItems="flex-start"
-              justifyContent="space-around"
-            >
+            <Flex flexDir="row" alignItems="flex-start" flexWrap="wrap">
               {category.raffles.map((raffle, raffleIndex) => (
                 <Flex
                   position="relative"
@@ -48,8 +44,10 @@ export const RafflesComponent = () => {
                   cursor="pointer"
                   key={raffleIndex}
                   flexDir="column"
-                  w={"30%"}
+                  minW={"30%"}
                   p={5}
+                  mr={10}
+                  mb={5}
                   borderColor={"#000"}
                   borderWidth={2}
                   borderRadius={10}
@@ -61,14 +59,19 @@ export const RafflesComponent = () => {
                     {raffle.title}
                   </Text>
                   <Text fontSize={20} color="#3bb82e" fontWeight="bold" mb={3}>
-                    Anuj.Patel
+                    {raffle.host}
                   </Text>
 
-                  <Flex flexDir="column" bottom={5} p={5} position="absolute">
+                  <Flex flexDir="column" bottom={5} position="absolute">
                     <Image
                       alt="image-raffle"
                       src={raffle.picture}
-                      style={{ marginBottom: 10 }}
+                      style={{
+                        marginBottom: 10,
+                        width: "400px",
+                        height: "250px",
+                        objectFit: "contain",
+                      }}
                     />
 
                     <Flex

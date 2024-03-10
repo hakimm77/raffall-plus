@@ -4,6 +4,7 @@ import { RaffleSingleComponent } from "../../components/RaffleSingleComponent";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { raffles } from "../../utils/raffles";
+import Head from "next/head";
 
 const RaffleInitials = () => {
   const router = useRouter();
@@ -27,6 +28,9 @@ const RaffleInitials = () => {
       alignItems="center"
       pb={50}
     >
+      <Head>
+        <title>Raffle Ticket | {raffleObject?.title ?? ""}</title>
+      </Head>
       <Navbar />
 
       {raffleObject && <RaffleSingleComponent raffleObject={raffleObject} />}
