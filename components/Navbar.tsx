@@ -26,7 +26,7 @@ export const Navbar = () => {
         <Image
           alt="icon"
           src={require("../assets/raffle-icon.png")}
-          style={{ width: 250 }}
+          style={{ width: 300 }}
         />
       </Flex>
 

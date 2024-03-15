@@ -1,7 +1,8 @@
-import { Button, Flex, Image, Input, Text } from "@chakra-ui/react";
+import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { raffles } from "../utils/raffles";
+import Image from "next/image";
 
 export const RafflesComponent = () => {
   const { push } = useRouter();
@@ -44,8 +45,7 @@ export const RafflesComponent = () => {
                   cursor="pointer"
                   key={raffleIndex}
                   flexDir="column"
-                  minW={"30%"}
-                  w="30%"
+                  w="450px"
                   p={5}
                   mr={10}
                   mb={5}
@@ -76,6 +76,7 @@ export const RafflesComponent = () => {
                     />
 
                     <Flex
+                      w="100%"
                       flexDir="row"
                       alignItems="center"
                       justifyContent="space-between"
